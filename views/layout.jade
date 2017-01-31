@@ -1,0 +1,30 @@
+doctype html
+html(ng-app="uResults")
+	head
+		title= title
+		link(rel="stylesheet", href="/bower_components/bootstrap-css/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet", href="/stylesheets/style.css")
+		script(src="/bower_components/angular/angular.min.js")
+		script(src="/bower_components/angular-route/angular-route.min.js")
+		script(src="/bower_components/angular-cookies/angular-cookies.min.js")
+		script(src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
+		script(src="/bower_components/fetch/fetch.js")
+		script(src="/angular/app.module.js")
+		script(src="/angular/core/core.module.js")
+		script(src="/angular/core/checkmark.filter.js")
+		script(src="/angular/core/resources.service.js")
+		script(src="/angular/categories/categories.module.js")
+		script(src="/angular/categories/categories.component.js")
+		script(src="/angular/competition/competition.module.js")
+		script(src="/angular/competition/competition.component.js")
+		script(src="/angular/teams/teams.module.js")
+		script(src="/angular/teams/teams.component.js")
+		script(src="/angular/games/games.module.js")
+		script(src="/angular/games/games.component.js")
+		script(src="/angular/games/new-game.component.js")
+		script(src="/angular/table/table.module.js")
+		script(src="/angular/table/table.component.js")
+	body
+		block content
+		

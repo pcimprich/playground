@@ -1,0 +1,40 @@
+div.rr-content {
+	padding: 0px 5px;
+}
+
+.padding-a {
+	padding: 5px 10px;
+}
+
+.padding-b {
+	padding: 5px 0px;
+}
+
+.form-inline input.narrow {
+	width: 65px;
+}
+
+.form-inline input.wider {
+	width: 80px;
+}
+
+.form-inline input.wide {
+	width: 160px;
+}
+
+div.main {
+	padding: 20px;
+}
+
+div.menu, div.content {
+	padding-top: 10px;
+}
+
+td.right, th.right {
+	text-align: right;
+}
+
+input.ng-invalid, select.ng-invalid {
+    background-color: pink;
+}
+

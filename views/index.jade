@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	div.main
+		div.menu
+			// A custom component to render categories and their competitions
+			u-res-categories(comp="#{competitionId}")
+		div.content
+			// A custom component to render competitions for a category
+			u-res-competition(comp="#{competitionId}")

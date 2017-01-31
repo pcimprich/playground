@@ -1,0 +1,33 @@
+<div class="padding-b">
+	<button type="button" class="btn {{buttonMatchClass}}" ng-click="isCollapsedNew = !isCollapsedNew"><i class="fa fa-plus" aria-hidden="true"></i> {{buttonMatch}}</button>
+	<button type="button" class="btn {{buttonFilterClass}}" ng-click="isCollapsedFilter = !isCollapsedFilter"><i class="fa fa-filter" aria-hidden="true"></i> {{buttonFilter}}</button>
+</div>
+<div uib-collapse="!isCollapsedFilter" collapsed="buttonFilter = $ctrl.s.buttonShowFilter; buttonFilterClass = $ctrl.s.classCollapsed" 
+	expanded="buttonFilter = $ctrl.s.buttonHideFilter; buttonFilterClass = $ctrl.s.classExpanded">
+	<div class="well well-lg">
+		<form class="form-inline">
+			{{$ctrl.s.labelFilter}}: <input class="form-control wide" ng-model="$ctrl.query" /> ({{$ctrl.games.length}})
+		</form>
+	</div>
+</div>
+<div uib-collapse="!isCollapsedNew" collapsed="buttonMatch = $ctrl.s.buttonNewMatch; buttonMatchClass = $ctrl.s.classCollapsed" 
+	expanded="buttonMatch = $ctrl.s.buttonCancelAdding; buttonMatchClass = $ctrl.s.classExpanded">
+	<div class="well well-lg">
+		<u-res-new-game competition="$ctrl.competition"></u-res-new-game>
+	</div>
+</div>
+<table class="table">
+	<tr ng-repeat="game in $ctrl.games | filter:$ctrl.query">
+		<td>{{game.shortDate}} ({{game.round}})</td>
+		<td ng-if="game.full_a > game.full_b">
+			<span class="text-success">{{game.team_aName}}</span> - <span class="text-danger">{{game.team_bName}}</span>
+		</td>
+		<td ng-if="game.full_a < game.full_b">
+			<span class="text-danger">{{game.team_aName}}</span> - <span class="text-success">{{game.team_bName}}</span>
+		</td>
+		<td ng-if="game.full_a == game.full_b">
+			<span class="text-warning">{{game.team_aName}}</span> - <span class="text-warning">{{game.team_bName}}</span>
+		</td>
+		<td>{{game.full_a}}:{{game.full_b}} {{game.forfeit ? '\u2718' : ''}}</td>
+	</tr>
+</table>

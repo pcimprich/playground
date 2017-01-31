@@ -1,0 +1,18 @@
+<form name="newGame" class="form-inline" action="/api/games" method="post">
+	<div class="form-group">
+		<select class="form-control" name="team_a" ng-model="teamA" required>
+			<option ng-repeat="team in $ctrl.teams" value="{{team.id}}" ng-if="team.id != teamB">{{team.name}}</option>
+		</select>
+		<input type="number" class="form-control narrow" name="full_a" value="0" min="0" max="500" />
+		<strong>:</strong>
+		<input type="number" class="form-control narrow" name="full_b" value="0" min="0" max="500" />
+		<select class="form-control" name="team_b" ng-model="teamB" required>
+			<option ng-repeat="team in $ctrl.teams" value="{{team.id}}" ng-if="team.id != teamA">{{team.name}}</option>
+		</select>
+		<input type="number" class="form-control wider" name="round" ng-model="round" placeholder="round" min="0" max="50" required/>
+		<input type="checkbox" class="form-control" value="1" name="forfeit" ng-model="forfeit" />
+		<input type="hidden" value="{{$ctrl.competition.id}}" name="competition" />
+		<button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> {{$ctrl.s.buttonSubmit}}</button>
+		<button type="reset" class="btn btn-danger"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+	</div>
+</form>

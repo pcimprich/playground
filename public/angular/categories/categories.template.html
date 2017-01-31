@@ -1,0 +1,18 @@
+<span ng-repeat="category in $ctrl.categories">
+    <div ng-if="category.competitions.length > 1" class="btn-group" uib-dropdown is-open="status.isopen">
+         <button id="single-button" class="btn {{category.id == $ctrl.currentCategory ? 'btn-info' : 'btn-default'}}"
+		 	type="button" uib-dropdown-toggle ng-disabled="disabled">
+           {{category.name}} <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+			 <li role="menuitem" ng-repeat="competition in category.competitions">
+				 <a href="/index/{{competition.id}}">{{competition.name}}</a>
+			 </li>
+         </ul>
+	 </div>
+	 <span ng-if="category.competitions.length == 1">
+		 <a class="btn {{category.id == $ctrl.currentCategory ? 'btn-info' : 'btn-default'}}" 
+		 	href="/index/{{category.competitions[0].id}}" role="button">{{category.name}}</a>
+	</span>
+</span>
+<a class="btn btn-default" href="/about" role="button"><i class="fa fa-bars" aria-hidden="true"></i></a>

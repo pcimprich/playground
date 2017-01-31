@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	div.main
+		div.menu
+			// An AngularJS custom component to render categories and their competitions
+			u-res-categories(comp="#{competitionId}")
+		div.content(id="root")
+			// This element's contents will be replaced with React component
+			
+	script(src="/react/lib/about-compiled.js")
+			

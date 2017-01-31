@@ -1,0 +1,19 @@
+<h4 class="bg-info padding-a">{{$ctrl.competition.categoryName}} > {{$ctrl.competition.name}} {{$ctrl.competition.season}}</h4>
+<uib-tabset active="0">
+	<uib-tab index="0" heading="Ranking">
+		<div class="row">
+	  		<div class="col-md-8">
+				<!-- custom component to render teams for a competition -->
+				<u-res-table competition="$ctrl.competition"></u-res-table>
+			</div>
+		</div>
+	</uib-tab>
+	<uib-tab index="1" heading="Matches">
+		<div class="row">
+			<div class="col-md-8">
+				<!-- custom component to render games for a competition -->
+				<u-res-games competition="$ctrl.competition"></u-res-games>
+			</div>
+		</div>
+	</uib-tab>
+</uib-tabset>

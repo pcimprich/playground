@@ -1,0 +1,7 @@
+<h3 class="bg-info">{{$ctrl.competition.categoryName}}: {{$ctrl.competition.name}}</h3>
+<p class="text-muted">number of teams: {{$ctrl.teams.length}}</p>
+<table class="table table-striped">
+	<tr ng-repeat="team in $ctrl.teams">
+		<td>{{team.name}}</td>
+	</tr>
+</table>

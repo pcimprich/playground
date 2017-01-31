@@ -1,0 +1,24 @@
+<table class="table table-striped">
+	<tr>
+		<th>Ranking</th>
+		<th>M</th>
+		<th>W</th>
+		<th>D</th>
+		<th>L</th>
+		<th class="right">Score</th>
+		<th class="right">+/-</th>
+		<th class="right">Points</th>
+		<th>F</th>
+	</tr>
+	<tr ng-repeat="team in $ctrl.table | orderBy:'-pointsTotal'">
+		<td>{{$index + 1}}. {{team.name}}</td>
+		<td>{{team.games}}</td>
+		<td>{{team.wins}}</td>
+		<td>{{team.draws}}</td>
+		<td>{{team.defeats}}</td>
+		<td class="right">{{team.scorePlus}}:{{team.scoreMinus}}</td>
+		<td class="right">{{team.scorePlus - team.scoreMinus}}</td>
+		<td class="right"><strong>{{team.pointsTotal}}</strong></td>
+		<td>{{team.forfeits}}</td>
+	</tr>
+</table>
